@@ -14,7 +14,7 @@
 		  background-size: cover;
 		}
         .bg-overlay {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
         }
         .drag-over { 
@@ -31,7 +31,7 @@
             backdrop-filter: blur(16px);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -88,7 +88,7 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-3xl font-bold text-white flex items-center">
                     <span class="text-4xl mr-3">📖</span>
-                    Buku Tamu Digital
+                    BeTamu DPRD ME
                 </h1>
                 <div class="flex space-x-4">
                     <button onclick="showVisitorForm()" id="visitorBtn" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 backdrop-blur-sm border border-white border-opacity-20">
@@ -109,7 +109,7 @@
     <div id="visitorForm" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         <div class="glass-card rounded-2xl card-shadow p-8 border-t-4 border-purple-500">
             <div class="text-center mb-8">
-                <div class="text-6xl mb-4">✨</div>
+                <p align="center"><img src="logopemda.png" style="width: 100px;height: 100px;border-radius: 100%;"  ></img></p>
                 <h2 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">Form Registrasi Kunjungan</h2>
 				<h2 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">DPRD Kabupaten Muara Enim</h2>
                 <p class="text-gray-700">Jalan Mayor Tjik Agus Kiemas, S.H. Kecamatan Muara Enim</p>
@@ -118,30 +118,7 @@
 
                         <form id="visitForm" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Tanggal Kunjungan -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <span class="text-lg mr-2">📅</span>Tanggal Kunjungan
-                        </label>
-                        <input type="date" id="visitDate" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm">
-                    </div>
-
-                    <!-- Jam Kunjungan -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <span class="text-lg mr-2">🕐</span>Jam Kunjungan
-                        </label>
-                        <input type="time" id="visitTime" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm">
-                    </div>
-
-                    <!-- Jumlah Tamu -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <span class="text-lg mr-2">👥</span>Jumlah Tamu
-                        </label>
-                        <input type="number" id="guestCount" min="1" max="20" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm" placeholder="Masukkan jumlah tamu">
-                    </div>
-
+           
                     <!-- Nama -->
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
@@ -204,6 +181,21 @@
                     </label>
                     <textarea id="visitDetails" rows="4" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm" placeholder="Jelaskan keperluan kunjungan Anda secara detail..."></textarea>
                 </div>
+				
+				<div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-white/90 text-sm font-medium mb-2">Tanggal Kunjungan *</label>
+                            <input type="date" id="visitDate" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label class="block text-white/90 text-sm font-medium mb-2">Jam Kunjungan *</label>
+                            <input type="time" id="visitTime" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label class="block text-white/90 text-sm font-medium mb-2">Jumlah Tamu *</label>
+                            <input type="number" id="guestCount" min="1" max="50" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" placeholder="1" required>
+                        </div>
+                    </div>
 
                 <!-- Upload Dokumen -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -293,7 +285,7 @@
                         <span class="mr-2">📊</span>Export Data
                     </button>
                     <button onclick="clearAllData()" class="btn-danger text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
-                        <span class="mr-2">🗑️</span>Hapus Semua
+                        <span class="mr-2">🗑</span>Hapus Semua
                     </button>
                 </div>
             </div>
@@ -473,7 +465,7 @@
             const allowedTypes1 = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
             const allowedTypes2 = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/jpg', 'image/png'];
             const maxSize = 5 * 1024 * 1024; // 5MB
-            const errorDiv = document.getElementById(`uploadError${zone}`);
+            const errorDiv = document.getElementById(uploadError${zone});
             const allowedTypes = zone === 1 ? allowedTypes1 : allowedTypes2;
             const uploadedFiles = zone === 1 ? uploadedFiles1 : uploadedFiles2;
             const fileTypeText = zone === 1 ? 'PDF, DOC, atau DOCX' : 'PDF, DOC, DOCX, JPG, atau PNG';
@@ -482,12 +474,12 @@
 
             files.forEach(file => {
                 if (!allowedTypes.includes(file.type)) {
-                    showUploadError(`❌ File ${file.name} tidak didukung. Gunakan ${fileTypeText}.`, zone);
+                    showUploadError(❌ File ${file.name} tidak didukung. Gunakan ${fileTypeText}., zone);
                     return;
                 }
 
                 if (file.size > maxSize) {
-                    showUploadError(`❌ File ${file.name} terlalu besar. Maksimal 5MB.`, zone);
+                    showUploadError(❌ File ${file.name} terlalu besar. Maksimal 5MB., zone);
                     return;
                 }
 
@@ -512,13 +504,13 @@
         }
 
         function showUploadError(message, zone) {
-            const errorDiv = document.getElementById(`uploadError${zone}`);
-            errorDiv.innerHTML = `<div class="bg-red-50/80 backdrop-blur-sm border border-red-200 rounded-lg p-3">${message}</div>`;
+            const errorDiv = document.getElementById(uploadError${zone});
+            errorDiv.innerHTML = <div class="bg-red-50/80 backdrop-blur-sm border border-red-200 rounded-lg p-3">${message}</div>;
             errorDiv.classList.remove('hidden');
         }
 
         function displayFileList(zone) {
-            const fileList = document.getElementById(`fileList${zone}`);
+            const fileList = document.getElementById(fileList${zone});
             const uploadedFiles = zone === 1 ? uploadedFiles1 : uploadedFiles2;
             
             fileList.innerHTML = uploadedFiles.map((file, index) => `
@@ -551,7 +543,7 @@
         function getFileIcon(type) {
             if (type.includes('pdf')) return '📄';
             if (type.includes('word') || type.includes('document')) return '📝';
-            if (type.includes('image')) return '🖼️';
+            if (type.includes('image')) return '🖼';
             return '📎';
         }
 
@@ -745,7 +737,7 @@
                                         <button onclick="downloadFile('${doc.data}', '${doc.name}')" class="text-blue-600 hover:text-blue-800 text-xs underline font-medium">
                                             ${doc.name.length > 12 ? doc.name.substring(0, 12) + '...' : doc.name}
                                         </button>
-                                        <span class="text-xs px-2 py-1 rounded-full ${doc.category === 'document' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'}">${doc.category === 'document' ? '📄' : '🖼️'}</span>
+                                        <span class="text-xs px-2 py-1 rounded-full ${doc.category === 'document' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'}">${doc.category === 'document' ? '📄' : '🖼'}</span>
                                     </div>
                                 `).join('')}
                             </div>` : 
@@ -766,7 +758,7 @@
                                 ❌ Tolak
                             </button>
                             <button onclick="deleteVisit(${visit.id})" class="bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300">
-                                🗑️ Hapus
+                                🗑 Hapus
                             </button>
                         </div>
                     </td>
@@ -823,12 +815,12 @@
             const statusMessages = {
                 'approved': {
                     subject: '✅ Kunjungan Anda Telah Disetujui',
-                    message: `Selamat! Kunjungan Anda pada ${visit.visitDate} pukul ${visit.visitTime} telah disetujui. Silakan datang sesuai jadwal yang telah ditentukan.`,
+                    message: Selamat! Kunjungan Anda pada ${visit.visitDate} pukul ${visit.visitTime} telah disetujui. Silakan datang sesuai jadwal yang telah ditentukan.,
                     color: 'green'
                 },
                 'rejected': {
                     subject: '❌ Kunjungan Anda Tidak Dapat Disetujui',
-                    message: `Mohon maaf, kunjungan Anda pada ${visit.visitDate} pukul ${visit.visitTime} tidak dapat disetujui. Silakan hubungi admin untuk informasi lebih lanjut.`,
+                    message: Mohon maaf, kunjungan Anda pada ${visit.visitDate} pukul ${visit.visitTime} tidak dapat disetujui. Silakan hubungi admin untuk informasi lebih lanjut.,
                     color: 'red'
                 }
             };
@@ -877,7 +869,7 @@
         }
 
         function deleteVisit(id) {
-            if (confirm('🗑️ Apakah Anda yakin ingin menghapus data kunjungan ini?')) {
+            if (confirm('🗑 Apakah Anda yakin ingin menghapus data kunjungan ini?')) {
                 visitData = visitData.filter(visit => visit.id !== id);
                 localStorage.setItem('visitData', JSON.stringify(visitData));
                 updateAdminStats();
@@ -886,7 +878,7 @@
         }
 
         function clearAllData() {
-            if (confirm('🗑️ Apakah Anda yakin ingin menghapus semua data kunjungan?')) {
+            if (confirm('🗑 Apakah Anda yakin ingin menghapus semua data kunjungan?')) {
                 visitData = [];
                 localStorage.removeItem('visitData');
                 updateAdminStats();
@@ -953,10 +945,11 @@
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `buku-tamu-${new Date().toISOString().split('T')[0]}.csv`;
+            a.download = buku-tamu-${new Date().toISOString().split('T')[0]}.csv;
             a.click();
             window.URL.revokeObjectURL(url);
         }
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d46c8e75a47a69',t:'MTc1NDg4MDYxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
 </html>
